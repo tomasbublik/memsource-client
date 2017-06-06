@@ -1,0 +1,21 @@
+<p>
+  List of projects:
+</p>
+
+<p class="response" *ngIf="projectsResponse">Response success: {{projectsResponse.success}}</p>
+<p class="response" *ngIf="projectsResponse">Response reason: {{projectsResponse.reason}}</p>
+
+<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+<div class="response" *ngIf="projectsResponse && projectsResponse.success">
+<ul>
+  <li *ngFor="let projectModel of projectsResponse.projectModels">
+    <span>{{projectModel.name}}</span>
+    <span>{{projectModel.sourceLanguage}}</span>
+    <span>{{projectModel.targetLanguage}}</span>
+    <span>{{projectModel.status}}</span>
+  </li>
+</ul>
+</div>
+
+
